@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    <title>My Personal Map Journey</title>
+</head>
+<style>
+    #map { 
+        height: 80vh; 
+        width: 80vw;
+    }
+    .map-container {
+        margin : auto;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+    }
+
+</style>
+<body>
+     <div class ="map-container" id="map"></div>
+</body>
+
+<script>
+    var map = L.map('map').setView([14.35229, 121.32305], 13);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+// Markers
+ var marker = L.marker([14.35229, 121.32305]).addTo(map);
+ var marker2 = L.marker([14.62299, 121.60552]).addTo(map);
+ var marker3 = L.marker([14.413016, 121.448107]).addTo(map);
+ var marker4 = L.marker([14.343501, 121.376492]).addTo(map);
+ var marker5 = L.marker([14.1765, 121.2321]).addTo(map);
+
+//  Popup
+marker.bindPopup("Jala-jala, Rizal: This is my hometown!");
+marker2.bindPopup("Kiloloron, Real, Quezon: This is WHERE I WAS BORN!");
+marker3.bindPopup("LSPU Siniloan: This is WHERE I GO TO SCHOOL!");
+marker4.bindPopup("Bagumbong NHS: This is WHERE I study in highschool!");
+marker5.bindPopup("Los Banos, Laguna: This is WHERE my aunt lives!");
+
+</script>
+</html>
